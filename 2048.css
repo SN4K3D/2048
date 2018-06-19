@@ -1,0 +1,15 @@
+.tableau {
+	display: grid;
+	border-style: solid;
+	height: 500px;
+	width: 500px;
+	 grid-template-columns: 23% 23% 23% 23%;
+	 grid-template-rows: 23% 23% 23% 23%;
+	 grid-gap: 10px;
+	 padding: 20px;
+}
+
+.carre {
+	display: block;
+	border-style: solid;
+}
