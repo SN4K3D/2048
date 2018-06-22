@@ -1,15 +1,93 @@
+
+@keyframes bounce{
+  0%{
+    opacity: 0;
+    transform: scale(0.3) translate3d(0,0,0);
+  }
+  50%{
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80%{
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1) translate3d(0,0,0);
+  }
+}
+
+@keyframes slideBottom1 {
+	from {
+		margin-top: 0%;
+	}
+
+	to {
+		margin-top: 121%;
+	}
+}
+
+.slideBottom1 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideBottom1;
+	animation-duration: 1s;
+}
+
+body {
+	background-color: #333333;
+}
+
 .tableau {
 	display: grid;
 	border-style: solid;
 	height: 500px;
 	width: 500px;
-	 grid-template-columns: 23% 23% 23% 23%;
-	 grid-template-rows: 23% 23% 23% 23%;
-	 grid-gap: 10px;
+	 grid-template-columns: 25% 25% 25% 25%;
+	 grid-template-rows: 25% 25% 25% 25%;
+	 grid-gap: 0px;
 	 padding: 20px;
+	 background-color: #89725B;
+	 border-radius: 15px;
+	 margin: auto;
 }
+
 
 .carre {
 	display: block;
-	border-style: solid;
+	border: solid 10px;
+	text-align: center;
+	
+}
+.valeur {
+	font-weight: bold;
+	display: block;
+	font-size: 37px;
+	padding-top: 20%;
+	word-wrap: break-word;
+	vertical-align: middle;
+}
+
+.carre div {
+
+	height: 100%;
+	width: 100%;
+}
+
+.anime{
+	animation-name: bounce;
+	animation-duration: 1s;
+}
+
+.titre{
+	width: 50%;
+	margin: 4% auto;
+	color: red;
+	text-align: center;
+}
+
+#score {
+	color: white;
+	text-align: center;
 }
