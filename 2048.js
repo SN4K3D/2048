@@ -22,10 +22,10 @@ var win = 0;
 var compteur = 0;
 var direction;
 var tableau = new Array(
-	new Array ("","","","2"),
 	new Array ("","","",""),
 	new Array ("","","",""),
-	new Array ("","","","2"));
+	new Array ("","","",""),
+	new Array ("","","",""));
 
 var checkFusion = new Array(
 	new Array (0,0,0,0),
@@ -36,7 +36,20 @@ var checkFusion = new Array(
  onLoad();
  onLoad();
 
-
+function reset()
+{
+	score = 0;
+	for (var i = 0; i <= 3; i++)
+	{
+		for (var j = 0; j <= 3; j++)
+		{
+			tableau[i][j] = "";
+		}
+	}
+	onLoad();
+ 	onLoad();
+ 	affecteVal();
+}
 
 function trouveId(ligne, colone){
 	if(colone == 0 && ligne == 0)
@@ -591,12 +604,15 @@ function déplacer (direction)
 }
 
 function onLoad (){
-	
+	var i = 0;
 	var h = Math.floor(Math.random() * 4);
 	var l = Math.floor(Math.random() * 4);
 	while (tableau[l][h] != "")
 	{
-		console.log("aha");
+		if(i > 1000)
+			return;
+		i++;
+		console.log("aha load");
 		h = Math.floor(Math.random() * 4);
 		l = Math.floor(Math.random() * 4);
 	}

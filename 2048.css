@@ -268,3 +268,37 @@ body {
 	color: white;
 	text-align: center;
 }
+
+#reset{
+	display: block;
+	width: 50px;
+	margin-left:60%;
+}
+
+#commandes{
+	display: block;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#commandes img {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+
+#haut {
+	margin-left: 35%;
+	margin-bottom: 10%;
+	margin-top: 5%;
+}
+
+#droite {
+	margin-left: 50%;
+}
+
+#bas {
+	margin-left: 35%;
+	margin-top: 10%;
+}

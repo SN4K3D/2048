@@ -17,6 +17,7 @@
 <body onkeydown="keyPress(event)">
 	<header>
 		<h1 class="titre">Le 2048 By Snake !</h1>
+		<img id="reset" src="reset.png" onclick="reset()" >
 		<h2 id="score">Score: </h2>
 	</header>
 	<div class="tableau" >
@@ -37,6 +38,13 @@
 		<div  class="carre"><div><p class="valeur" id="14"></p></div></div>
 		<div  class="carre"><div><p class="valeur" id="15"></p></div></div>		
 	</div>
+	<!-- <div id="commandes">
+		<img id="haut" src="haut.jpeg" onclick="déplacer()"/><br/>
+		<img id="gauche" src="gauche.jpeg" onclick="déplacer(37)"/>
+		<img id="droite" src="droite.jpeg" onclick="déplacer(39)" /><br/>
+		<img id="bas" src="bas.jpg" onclick="déplacer(40)" />
+		
+	</div> -->
 <script type="text/javascript" src="2048.js"></script>
 </body>
 </html>
