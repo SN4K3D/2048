@@ -36,6 +36,12 @@ var checkFusion = new Array(
  onLoad();
  onLoad();
 
+ function affDir (int)
+ {
+ 	direction = int;
+ 	déplacer(int);
+ }
+
 function reset()
 {
 	score = 0;
