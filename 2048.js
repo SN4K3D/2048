@@ -22,10 +22,10 @@ var win = 0;
 var compteur = 0;
 var direction;
 var tableau = new Array(
-	new Array ("","","","2"),
 	new Array ("","","",""),
 	new Array ("","","",""),
-	new Array ("","","","2"));
+	new Array ("","","",""),
+	new Array ("","","",""));
 
 var checkFusion = new Array(
 	new Array (0,0,0,0),
