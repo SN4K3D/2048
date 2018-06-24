@@ -20,19 +20,195 @@
 
 @keyframes slideBottom1 {
 	from {
-		margin-top: 0%;
+		margin-top: -121%;
 	}
 
 	to {
-		margin-top: 121%;
+		margin-top: 0%;
+	}
+}
+@keyframes slideBottom2 {
+	from {
+		margin-top: -242%;
+	}
+
+	to {
+		margin-top: 0%;
+	}
+}
+@keyframes slideBottom3 {
+	from {
+		margin-top: -363%;
+	}
+
+	to {
+		margin-top: 0%;
 	}
 }
 
+@keyframes slideRight1 {
+	from {
+		margin-left: -121%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+@keyframes slideRight2 {
+	from {
+		margin-left: -242%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+@keyframes slideRight3 {
+	from {
+		margin-left: -363%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+
+@keyframes slideLeft1 {
+	from {
+		margin-left: 121%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+@keyframes slideLeft2 {
+	from {
+		margin-left: 242%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+@keyframes slideLeft3 {
+	from {
+		margin-left: 363%;
+	}
+
+	to {
+		margin-left: 0%;
+	}
+}
+
+@keyframes slideTop1 {
+	from {
+		margin-top: 121%;
+	}
+
+	to {
+		margin-top: 0%;
+	}
+}
+@keyframes slideTop2 {
+	from {
+		margin-top: 242%;
+	}
+
+	to {
+		margin-top: 0%;
+	}
+}
+@keyframes slideTop3 {
+	from {
+		margin-top: 363%;
+	}
+
+	to {
+		margin-top: 0%;
+	}
+}
 .slideBottom1 {
 	position: relative;
 	z-index: 10;
 	animation-name: slideBottom1;
-	animation-duration: 1s;
+	animation-duration: 0.2s;
+}
+.slideBottom2 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideBottom2;
+	animation-duration: 0.2s;
+}
+
+.slideBottom3 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideBottom3;
+	animation-duration: 0.2s;
+}
+
+.slideRight1 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideRight1;
+	animation-duration: 0.2s;
+}
+.slideRight2 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideRight2;
+	animation-duration: 0.2s;
+}
+
+.slideRight3 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideRight3;
+	animation-duration: 0.2s;
+}
+
+.slideLeft1 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideLeft1;
+	animation-duration: 0.2s;
+}
+
+.slideLeft2 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideLeft2;
+	animation-duration: 0.2s;
+}
+
+.slideLeft3 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideLeft3;
+	animation-duration: 0.2s;
+}
+
+.slideTop1 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideTop1;
+	animation-duration: 0.2s;
+}
+
+.slideTop2 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideTop2;
+	animation-duration: 0.2s;
+}
+
+.slideTop3 {
+	position: relative;
+	z-index: 10;
+	animation-name: slideTop3;
+	animation-duration: 0.2s;
 }
 
 body {
@@ -51,6 +227,7 @@ body {
 	 background-color: #89725B;
 	 border-radius: 15px;
 	 margin: auto;
+	 overflow: hidden;
 }
 
 
@@ -77,7 +254,7 @@ body {
 
 .anime{
 	animation-name: bounce;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
 }
 
 .titre{

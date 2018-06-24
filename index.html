@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>2048</title>
+	<!-- -------------------BOOTSTRAP------------------------------ -->
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+		<!-- -------------------BOOTSTRAP------------------------------ -->
+	<link rel="stylesheet" type="text/css" href="2048.css">
+
+</head>
+<body onkeydown="keyPress(event)">
+	<header>
+		<h1 class="titre">Le 2048 By Snake !</h1>
+		<h2 id="score">Score: </h2>
+	</header>
+	<div class="tableau" >
+		<div  class="carre"><div><p class="valeur" id="0"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="1"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="2"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="3"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="4"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="5"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="6"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="7"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="8"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="9"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="10"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="11"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="12"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="13"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="14"></p></div></div>
+		<div  class="carre"><div><p class="valeur" id="15"></p></div></div>		
+	</div>
+<script type="text/javascript" src="2048.js"></script>
+</body>
+</html>

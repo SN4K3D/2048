@@ -15,16 +15,17 @@ var thirty = document.getElementById('13');
 var fourteen = document.getElementById('14');
 var fifteen = document.getElementById('15');
 
+var move = 0;
 var score = 0;
 var bouger = false;
 var win = 0;
 var compteur = 0;
 var direction;
 var tableau = new Array(
+	new Array ("","","","2"),
 	new Array ("","","",""),
 	new Array ("","","",""),
-	new Array ("","","",""),
-	new Array ("","","",""));
+	new Array ("","","","2"));
 
 var checkFusion = new Array(
 	new Array (0,0,0,0),
@@ -73,15 +74,129 @@ function trouveId(ligne, colone){
 }
 
 
-function slide (ligne, colone, direction)
+function slide (ligne, colone)
 {
 	var slideElem = document.getElementById(trouveId(ligne, colone));
-	if (direction == 40)
-	{
-		slideElem.parentNode.classList.add("slidBottom1");
-		window.setTimeout(function(){
-			slideElem.parentNode.classList.remove('slidBottom1');
-		}, 1000);
+	switch (direction)
+	{	
+		case 40 :
+			switch (move)
+			{
+				case 1:
+					slideElem.parentNode.classList.add("slideBottom1");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideBottom1');
+					}, 200);
+					break;
+				
+				case 2:
+					slideElem.parentNode.classList.add("slideBottom2");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideBottom2');
+					}, 200);
+					break;
+
+				case 3:
+					slideElem.parentNode.classList.add("slideBottom3");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideBottom3');
+					}, 200);
+					break;
+				
+				default:
+					break;
+			}
+			break;
+
+		case 39: 
+			switch (move)
+			{
+				case 1:
+					slideElem.parentNode.classList.add("slideRight1");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideRight1');
+					}, 200);
+					break;
+				
+				case 2:
+					slideElem.parentNode.classList.add("slideRight2");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideRight2');
+					}, 200);
+					break;
+
+				case 3:
+					slideElem.parentNode.classList.add("slideRight3");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideRight3');
+					}, 200);
+					break;
+				
+				default:
+					break;
+			}
+			break;
+
+		case 38: 
+			switch (move)
+			{
+				case 1:
+					slideElem.parentNode.classList.add("slideTop1");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideTop1');
+					}, 200);
+					break;
+				
+				case 2:
+					slideElem.parentNode.classList.add("slideTop2");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideTop2');
+					}, 200);
+					break;
+
+				case 3:
+					slideElem.parentNode.classList.add("slideTop3");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideTop3');
+					}, 200);
+					break;
+				
+				default:
+					break;
+			}
+			break;
+
+		case 37: 
+			switch (move)
+			{
+				case 1:
+					slideElem.parentNode.classList.add("slideLeft1");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideLeft1');
+					}, 200);
+					break;
+				
+				case 2:
+					slideElem.parentNode.classList.add("slideLeft2");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideLeft2');
+					}, 200);
+					break;
+
+				case 3:
+					slideElem.parentNode.classList.add("slideLeft3");
+					window.setTimeout(function(){
+						slideElem.parentNode.classList.remove('slideLeft3');
+					}, 200);
+					break;
+				
+				default:
+					break;
+			}
+			break;
+
+		default : 
+			break;
 	}
 }
 
@@ -89,10 +204,13 @@ function bounce(ligne, colone)
 {
 	var bounceElem = document.getElementById(trouveId(ligne, colone));
 	
-	bounceElem.parentNode.classList.add('anime');
+	window.setTimeout(function(){
+		bounceElem.parentNode.classList.add('anime');
+	}, 250);
+	
 	window.setTimeout(function(){
 		bounceElem.parentNode.classList.remove('anime');
-	}, 1000);
+	}, 500);
 
 }
 
@@ -258,15 +376,15 @@ function affecteVal()
 	if(loose())
 	{
 		if (checkLoose() == 16)
-			window.alert("tu a perdu ! \n TRY AGAIN ")
+			window.alert("tu a perdus ! \n TRY AGAIN ")
 	}
 }
 
 function déplacer (direction)
 {	
-	var move = 0;
 	var temp;
 	var monTab;
+	move = 0;
 	
 	initFusion();
 	bouger = false;
@@ -290,23 +408,33 @@ function déplacer (direction)
 					}
 					if (ligne < 3 && tableau[ligne + 1][colone] == temp && checkFusion[ligne + 1][colone] == 0)
 					{	
+						bouger = true;
 						checkFusion[ligne + 1][colone] = 1;
 						tableau[ligne + 1][colone] *= 2;
+						if (move > 0)
+							slide((ligne + 1), colone);
 						score += temp * 2;
 						temp = "";
-						bounce(ligne + 1, colone);
+						bounce((ligne + 1), colone);
+						move = 0;
 					}
 					else
 					{
+						if (move > 0)
+							slide(ligne, colone);
 						tableau[ligne][colone] = temp;
 						temp = "";
+						move = 0;
 					}
 
 				}
 			}
 		}
-		if(!loose() && bouger)
-			onLoad();
+		if(!loose() && bouger){
+			affecteVal();
+			window.setTimeout(function (){onLoad();}, 300);
+		}
+			
 		else
 			affecteVal();		
 	}
@@ -325,27 +453,38 @@ function déplacer (direction)
 					tableau[ligne][colone] = "";
 					while(ligne > 0 && tableau[ligne - 1][colone] == ""){
 						ligne--;
-						console.log(ligne);
+						move++;
+						console.log("move = " + move);
 						bouger = true;
 					}
 					if (ligne > 0 && tableau[ligne - 1][colone] == temp && checkFusion[ligne - 1][colone] == 0)
 					{
+
+						bouger = true;
 						checkFusion[ligne - 1][colone] = 1;
 						tableau[ligne - 1][colone] *= 2;
+						if (move > 0)
+							slide((ligne - 1), colone);
 						score += temp * 2;
 						temp = "";
 						bounce(ligne - 1, colone);
+						move = 0;
 					}
 					else
 					{
+						if (move > 0)
+							slide(ligne, colone);
 						tableau[ligne][colone] = temp;
 						temp = "";
+						move = 0;
 					}
 				}
 			}
 		}
-		if(!loose() && bouger)
-			onLoad();
+		if(!loose() && bouger){
+			affecteVal();
+			window.setTimeout(function (){onLoad();}, 300);
+		}
 		else
 			affecteVal();		
 	}
@@ -364,27 +503,37 @@ function déplacer (direction)
 					tableau[ligne][colone] = "";
 					while(colone < 3 && tableau[ligne][colone + 1] == ""){
 						colone++;
+						move++;
 						console.log(ligne);
 						bouger = true;
 					}
 					if (colone < 3 && tableau[ligne][colone + 1] == temp && checkFusion[ligne][colone + 1] == 0)
 					{
+						bouger = true;
 						checkFusion[ligne][colone + 1] = 1;
 						tableau[ligne][colone + 1] *= 2;
+						if (move > 0)
+							slide((ligne), colone + 1);
 						score += temp * 2;
 						temp = "";
 						bounce(ligne, colone + 1);
+						move = 0;
 					}
 					else
 					{
+						if (move > 0)
+							slide(ligne, colone);
 						tableau[ligne][colone] = temp;
 						temp = "";
+						move = 0;
 					}
 				}
 			}
 		}
-		if(!loose() && bouger)
-			onLoad();
+		if(!loose() && bouger){
+			affecteVal();
+			window.setTimeout(function (){onLoad();}, 300);
+		}
 		else
 			affecteVal();		
 	}
@@ -403,27 +552,37 @@ function déplacer (direction)
 					tableau[ligne][colone] = "";
 					while(colone > 0 && tableau[ligne][colone - 1] == ""){
 						colone--;
+						move++;
 						console.log(ligne);
 						bouger = true;
 					}
 					if (colone > 0 && tableau[ligne][colone - 1] == temp && checkFusion[ligne][colone - 1] == 0)
 					{
+						bouger = true;
 						checkFusion[ligne][colone - 1] = 1;
 						tableau[ligne][colone - 1] *= 2;
+						if (move > 0)
+							slide((ligne), colone - 1);
 						score += temp * 2;
 						temp = "";
 						bounce(ligne, colone - 1);
+						move = 0;
 					}
 					else
 					{
+						if (move > 0)
+							slide(ligne, colone);
 						tableau[ligne][colone] = temp;
 						temp = "";
+						move = 0;
 					}
 				}
 			}
 		}
-		if(!loose() && bouger)
-			onLoad();
+		if(!loose() && bouger){
+			affecteVal();
+			window.setTimeout(function (){onLoad();}, 300);
+		}
 		else
 			affecteVal();		
 	}
