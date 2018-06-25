@@ -395,7 +395,7 @@ function affecteVal()
 	if(loose())
 	{
 		if (checkLoose() == 16)
-			window.alert("tu a perdus ! \n TRY AGAIN ")
+			window.alert("tu as perdu ! \n TRY AGAIN ")
 	}
 }
 
