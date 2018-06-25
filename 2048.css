@@ -260,7 +260,7 @@ body {
 
 .titre{
 	width: 50%;
-	margin: 4% auto;
+	margin: 1% auto;
 	color: red;
 	text-align: center;
 }
@@ -274,6 +274,8 @@ body {
 	display: block;
 	width: 50px;
 	margin-left:60%;
+	height: 50px;
+	margin-top: 0px;
 }
 
 #commandes{
