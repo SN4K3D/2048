@@ -267,11 +267,11 @@ function affCouleur()
 				break;
 
 			case "64":
-				brique.parentNode.style.backgroundColor = "#F32800";
+				brique.parentNode.style.backgroundColor = "#F00800";
 				break;
 
 			case "128":
-				brique.parentNode.style.backgroundColor = "#F4FA3C";
+				brique.parentNode.style.backgroundColor = "#F3F787";
 				break;
 
 			case "256":
